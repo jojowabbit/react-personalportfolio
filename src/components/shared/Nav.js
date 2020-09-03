@@ -1,21 +1,30 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FiSun, FiMoon, FiAlignRight } from "react-icons/fi";
 
 import { PortfolioContext } from "../../context";
-import { bp } from "../../GlobalStyles";
+import { bp, colors, shadows } from "../../GlobalStyles";
 
 const Nav = () => {
   const { isDark, handleTheme } = useContext(PortfolioContext);
+
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const handleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+  const showNav = isNavOpen ? "showNav" : null;
 
   return (
     <Wrapper>
       <Link to="/" className="nav__logo">
         RK
       </Link>
-
-      <ul>
+      <button onClick={handleTheme} className="btn btn-toggle">
+        {isDark ? <FiSun /> : <FiMoon />}
+      </button>
+      <ul className={showNav}>
         <li>
           <Link to="/" className="nav__link">
             Home
@@ -32,23 +41,21 @@ const Nav = () => {
           </Link>
         </li>
       </ul>
-      <div>
-        <button onClick={handleTheme} className="btn">
-          {isDark ? <FiSun /> : <FiMoon />}
-        </button>
-        <button className="btn btn-menu">
-          <FiAlignRight />
-        </button>
-      </div>
+
+      <button className="btn btn-menu" onClick={handleNav}>
+        <FiAlignRight />
+      </button>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.nav`
+  height: 8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem;
+  padding: 2rem 0;
+  position: relative;
   .nav__logo {
     font-size: 5rem;
     font-weight: 600;
@@ -56,18 +63,49 @@ const Wrapper = styled.nav`
 
   ul {
     display: none;
-
     @media (min-width: ${bp.md}) {
       display: flex;
     }
   }
+  ul.showNav {
+    display: block;
+    position: absolute;
+    top: 8rem;
+    width: 100%;
+    background-color: ${colors.primary.s6};
+    border-radius: 0.25rem;
+    box-shadow: ${shadows.s2};
+    z-index: 50;
+  }
+  li {
+    padding: 2rem 0;
+    text-align: center;
+    @media (min-width: ${bp.md}) {
+      padding: 0;
+      text-align: initial;
+    }
+  }
+
   .nav__link {
-    padding-left: 2rem;
+    display: block;
     letter-spacing: 0.2rem;
     text-transform: capitalize;
+
+    @media (min-width: ${bp.md}) {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      padding-left: 2rem;
+    }
+  }
+
+  .btn-toggle {
+    margin-left: auto;
+    font-size: 2.5rem;
   }
   .btn-menu {
     display: block;
+    margin-left: 2rem;
+    font-size: 2.5rem;
     @media (min-width: ${bp.md}) {
       display: none;
     }
