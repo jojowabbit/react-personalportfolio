@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-import { defaultTheme, darkTheme } from "../GlobalStyles";
+import { defaultTheme, darkTheme, bp } from "../GlobalStyles";
 
 // Setup Context
 const PortfolioContext = React.createContext();
@@ -16,7 +16,7 @@ const PortfolioProvider = ({ children }) => {
   };
 
   return (
-    <PortfolioContext.Provider value={{ theme, isDark, handleTheme }}>
+    <PortfolioContext.Provider value={{ theme, isDark, handleTheme, bp }}>
       {children}
     </PortfolioContext.Provider>
   );
