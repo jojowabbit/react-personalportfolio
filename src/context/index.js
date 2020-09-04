@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
-import { defaultTheme, darkTheme } from "../GlobalStyles";
+import { worksData, blogsData } from "./data";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles, defaultTheme, darkTheme } from "../GlobalStyles";
 
 // Setup Context
 const PortfolioContext = React.createContext();
@@ -9,6 +11,8 @@ const PortfolioContext = React.createContext();
 const PortfolioProvider = ({ children }) => {
   const [theme, setTheme] = useState(defaultTheme);
   const [isDark, setIsDark] = useState(false);
+  const [works, setWorks] = useState(worksData);
+  const [blogs, setBlogs] = useState(blogsData);
 
   const handleTheme = () => {
     theme === defaultTheme ? setTheme(darkTheme) : setTheme(defaultTheme);
@@ -16,8 +20,13 @@ const PortfolioProvider = ({ children }) => {
   };
 
   return (
-    <PortfolioContext.Provider value={{ theme, isDark, handleTheme }}>
-      {children}
+    <PortfolioContext.Provider
+      value={{ theme, isDark, handleTheme, works, blogs }}
+    >
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        {children}
+      </ThemeProvider>
     </PortfolioContext.Provider>
   );
 };

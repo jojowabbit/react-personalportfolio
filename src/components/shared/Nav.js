@@ -26,17 +26,29 @@ const Nav = () => {
       </button>
       <ul className={showNav}>
         <li>
-          <Link to="/" className="nav__link">
+          <Link
+            to="/"
+            className="nav__link"
+            onClick={() => setIsNavOpen(false)}
+          >
             Home
           </Link>
         </li>
         <li>
-          <Link to="/works" className="nav__link">
+          <Link
+            to="/works"
+            className="nav__link"
+            onClick={() => setIsNavOpen(false)}
+          >
             Works
           </Link>
         </li>
         <li>
-          <Link to="/blogs" className="nav__link">
+          <Link
+            to="/blogs"
+            className="nav__link"
+            onClick={() => setIsNavOpen(false)}
+          >
             Blogs
           </Link>
         </li>
@@ -69,6 +81,7 @@ const Wrapper = styled.nav`
   }
   ul.showNav {
     display: block;
+    opacity: 1;
     position: absolute;
     top: 8rem;
     width: 100%;
