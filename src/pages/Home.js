@@ -8,14 +8,16 @@ export default function Home() {
   return (
     <Wrapper>
       <div className="img-container">
-        <img src={hero} alt="hero image" />
+        <img src={hero} alt="hero" />
       </div>
       <header>
         <h1>
           Hello, this is <span>RK</span>
         </h1>
         <h3>a front-end web developer.</h3>
-        <button className="btn btn-primary">see my works</button>
+        <button className="btn btn-primary">
+          <Link to="/works">see my works</Link>
+        </button>
       </header>
     </Wrapper>
   );
