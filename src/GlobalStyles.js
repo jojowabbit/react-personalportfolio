@@ -42,13 +42,13 @@ export const bp = {
 
 export const defaultTheme = {
   body: colors.gray.s1,
-  text: colors.gray.s9,
+  text: colors.gray.s8,
   primary: colors.primary.s7,
 };
 
 export const darkTheme = {
   body: colors.gray.s9,
-  text: colors.gray.s1,
+  text: colors.gray.s2,
   primary: colors.primary.s9,
 };
 
