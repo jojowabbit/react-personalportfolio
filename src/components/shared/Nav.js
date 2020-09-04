@@ -19,7 +19,7 @@ const Nav = () => {
   return (
     <Wrapper>
       <Link to="/" className="nav__logo">
-        RK
+        Rk
       </Link>
       <button onClick={handleTheme} className="btn btn-toggle">
         {isDark ? <FiSun /> : <FiMoon />}
@@ -71,6 +71,7 @@ const Wrapper = styled.nav`
   .nav__logo {
     font-size: 5rem;
     font-weight: 600;
+    color: ${colors.primary.s6};
   }
 
   ul {
@@ -86,6 +87,7 @@ const Wrapper = styled.nav`
     top: 8rem;
     width: 100%;
     background-color: ${colors.primary.s6};
+
     border-radius: 0.25rem;
     box-shadow: ${shadows.s2};
     z-index: 50;

@@ -12,12 +12,12 @@ export default function Home() {
       </div>
       <header>
         <h1>
-          Hello, this is <span>RK</span>
+          Hello, this is <span>Rk</span>
         </h1>
         <h3>a front-end web developer.</h3>
-        <button className="btn btn-primary">
-          <Link to="/works">see my works</Link>
-        </button>
+        <Link to="/works" className="btn btn-primary">
+          see my works
+        </Link>
       </header>
     </Wrapper>
   );
@@ -27,13 +27,18 @@ const Wrapper = styled.main`
   height: calc(100vh - 8rem);
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+
   align-items: center;
   @media (min-width: ${bp.md}) {
     flex-direction: row;
   }
   header {
     text-align: left;
+    padding-top: 2rem;
+    @media (min-width: ${bp.md}) {
+      padding-top: 0;
+      padding-left: 2rem;
+    }
 
     h1 {
       font-size: 6rem;
@@ -44,13 +49,15 @@ const Wrapper = styled.main`
     h3 {
       font-size: 4rem;
     }
-    button {
-      margin-top: 1.25rem;
-    }
   }
   .img-container {
-    max-width: 40rem;
+    max-width: 50rem;
     width: 100%;
+    padding-top: 2rem;
+    @media (min-width: ${bp.md}) {
+      padding-top: 0;
+      padding-left: 2rem;
+    }
 
     img {
       width: 100%;

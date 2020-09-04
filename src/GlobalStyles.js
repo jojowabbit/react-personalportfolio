@@ -110,11 +110,13 @@ object {
   border-radius: .25rem;
   font-size: 1.6rem;
   cursor: pointer;
+  font-weight: 500;
 }
 
 .btn-primary {
   background-color: ${colors.primary.s6};
   color: ${colors.primary.s1};
+  margin-top: 1.25rem;
   
   &:hover {
     background-color: ${colors.primary.s7};
