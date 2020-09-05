@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-// import { worksData, blogsData } from "./data";
+import { worksData } from "./data";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles, defaultTheme, darkTheme } from "../GlobalStyles";
 
@@ -12,7 +12,7 @@ const PortfolioProvider = ({ children }) => {
   const [theme, setTheme] = useState(defaultTheme);
   const [isDark, setIsDark] = useState(false);
   // mock data for later
-  // const [works, setWorks] = useState(worksData);
+  const [works, setWorks] = useState([]);
   // const [blogs, setBlogs] = useState(blogsData);
 
   const handleTheme = () => {
@@ -20,8 +20,22 @@ const PortfolioProvider = ({ children }) => {
     theme === defaultTheme ? setIsDark(true) : setIsDark(false);
   };
 
+  useEffect(() => {
+    setWorks(formatWorks(worksData));
+  }, []);
+
+  const formatWorks = (items) => {
+    let newItems = items.map((item) => {
+      let id = item.sys.id;
+      let images = item.fields.images.map((image) => image.fields.file.url);
+      let work = { ...item.fields, id, images };
+      return work;
+    });
+    return newItems;
+  };
+
   return (
-    <PortfolioContext.Provider value={{ theme, isDark, handleTheme }}>
+    <PortfolioContext.Provider value={{ theme, isDark, handleTheme, works }}>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         {children}

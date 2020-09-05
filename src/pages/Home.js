@@ -41,13 +41,9 @@ const Wrapper = styled.main`
     }
 
     h1 {
-      font-size: 6rem;
       span {
         color: ${colors.primary.s5};
       }
-    }
-    h3 {
-      font-size: 4rem;
     }
   }
   .img-container {
