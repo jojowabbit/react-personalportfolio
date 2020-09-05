@@ -71,7 +71,7 @@ const Wrapper = styled.nav`
   .nav__logo {
     font-size: 5rem;
     font-weight: 600;
-    color: ${colors.primary.s6};
+    color: ${colors.primary.s5};
   }
 
   ul {
@@ -86,7 +86,7 @@ const Wrapper = styled.nav`
     position: absolute;
     top: 8rem;
     width: 100%;
-    background-color: ${colors.primary.s6};
+    background-color: ${colors.primary.s5};
 
     border-radius: 0.25rem;
     box-shadow: ${shadows.s2};

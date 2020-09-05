@@ -43,7 +43,7 @@ export const bp = {
 export const defaultTheme = {
   body: colors.gray.s1,
   text: colors.gray.s8,
-  primary: colors.primary.s7,
+  primary: colors.primary.s5,
 };
 
 export const darkTheme = {
@@ -114,12 +114,12 @@ object {
 }
 
 .btn-primary {
-  background-color: ${colors.primary.s6};
+  background-color: ${colors.primary.s5};
   color: ${colors.primary.s1};
   margin-top: 1.25rem;
   
   &:hover {
-    background-color: ${colors.primary.s7};
+    background-color: ${colors.primary.s6};
   }
 }
 

@@ -27,8 +27,8 @@ const Wrapper = styled.main`
   height: calc(100vh - 8rem);
   display: flex;
   flex-direction: column;
-
   align-items: center;
+  justify-content: center;
   @media (min-width: ${bp.md}) {
     flex-direction: row;
   }
@@ -43,7 +43,7 @@ const Wrapper = styled.main`
     h1 {
       font-size: 6rem;
       span {
-        color: ${colors.primary.s6};
+        color: ${colors.primary.s5};
       }
     }
     h3 {
