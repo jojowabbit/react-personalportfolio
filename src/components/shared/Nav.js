@@ -21,9 +21,13 @@ const Nav = () => {
       <Link to="/" className="nav__logo">
         Rk
       </Link>
-      <button onClick={handleTheme} className="btn btn-toggle">
-        {isDark ? <FiSun /> : <FiMoon />}
-      </button>
+
+      {isDark ? (
+        <FiSun onClick={handleTheme} className="btn-toggle" />
+      ) : (
+        <FiMoon onClick={handleTheme} className="btn-toggle" />
+      )}
+
       <ul className={showNav}>
         <li>
           <Link
@@ -67,7 +71,7 @@ const Wrapper = styled.nav`
   align-items: center;
   justify-content: space-between;
   padding: 2rem 0;
-  position: relative;
+
   .nav__logo {
     font-size: 5rem;
     font-weight: 600;
@@ -91,6 +95,9 @@ const Wrapper = styled.nav`
     border-radius: 0.25rem;
     box-shadow: ${shadows.s2};
     z-index: 50;
+  }
+  ul.showNav .nav__link {
+    color: ${colors.primary.s2};
   }
   li {
     padding: 2rem 0;
@@ -116,6 +123,7 @@ const Wrapper = styled.nav`
   .btn-toggle {
     margin-left: auto;
     font-size: 2.5rem;
+    cursor: pointer;
   }
   .btn-menu {
     display: block;
