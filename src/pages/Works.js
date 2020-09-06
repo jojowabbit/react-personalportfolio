@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import { colors } from "../GlobalStyles";
 import WorkList from "../components/Works/WorkList";
 
 export default function Works() {
@@ -18,5 +19,6 @@ const Wrapper = styled.section`
     text-align: center;
     font-size: 5rem;
     padding: 2rem 0;
+    color: ${colors.primary.s5};
   }
 `;

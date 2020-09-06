@@ -117,6 +117,13 @@ h6 {
   font-size: 1.75rem;
 }
 
+img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+}
+
 .btn {
   display: inline-block;
   padding: .75rem 1.25rem;
