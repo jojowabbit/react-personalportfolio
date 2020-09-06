@@ -6,8 +6,8 @@ import { SiNetlify, SiGithub } from "react-icons/si";
 import { shadows, colors } from "../../GlobalStyles";
 
 const Work = ({ work }) => {
-  let { id, name, stacks, completed, images } = work;
-  stacks = stacks.map((item, index) => {
+  let { id, name, tags, completed, images, demo, source } = work;
+  tags = tags.map((item, index) => {
     return (
       <li key={index}>
         <span>#{item}</span>
@@ -30,20 +30,14 @@ const Work = ({ work }) => {
           <p>
             status: <em>{completed ? "completed" : "ongoing"}</em>
           </p>
-          <ul>{stacks}</ul>
+          <ul>{tags}</ul>
         </div>
 
         <div className="work-footer">
-          <a
-            href="https://jw-react-beach-resort.netlify.app/"
-            className="btn btn-primary"
-          >
+          <a href={demo} className="btn btn-primary">
             <SiNetlify />
           </a>
-          <a
-            href="https://github.com/jojowabbit/react-beach-resort-app"
-            className="btn btn-primary"
-          >
+          <a href={source} className="btn btn-primary">
             <SiGithub />
           </a>
         </div>
@@ -61,11 +55,14 @@ const Wrapper = styled.article`
   text-transform: capitalize;
   background-color: ${colors.gray.s2};
   color: ${colors.gray.s8};
+  width: 100%;
+  max-width: 45rem;
   .img-container {
     height: 20rem;
     position: relative;
 
     overflow: hidden;
+
     .work-link {
       opacity: 0;
       position: absolute;

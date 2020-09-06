@@ -71,7 +71,7 @@ const Wrapper = styled.nav`
   align-items: center;
   justify-content: space-between;
   padding: 2rem 0;
-
+  position: relative;
   .nav__logo {
     font-size: 5rem;
     font-weight: 600;

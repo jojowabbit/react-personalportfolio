@@ -1,9 +1,9 @@
-import img1 from "../images/room-1.jpeg";
-import img2 from "../images/room-2.jpeg";
-import img3 from "../images/room-3.jpeg";
-import img4 from "../images/room-4.jpeg";
-import img5 from "../images/room-5.jpeg";
-import img6 from "../images/room-6.jpeg";
+import img1 from "../images/project-1.png";
+import img2 from "../images/project-2.png";
+import img3 from "../images/project-3.png";
+import img4 from "../images/project-4.png";
+import img5 from "../images/project-5.png";
+import img6 from "../images/project-6.png";
 
 export const worksData = [
   {
@@ -11,9 +11,11 @@ export const worksData = [
       id: "1",
     },
     fields: {
-      name: "project 1",
+      name: "Github UserDB",
       completed: true,
-      stacks: ["react", "cms", "git"],
+      tags: ["react hooks", "fusion chart", "github api"],
+      demo: `https://jw-react-githubusersdb.netlify.app/`,
+      source: "https://github.com/jojowabbit/react-githubusersdb",
       description:
         "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.",
       images: [
@@ -32,9 +34,11 @@ export const worksData = [
       id: "2",
     },
     fields: {
-      name: "project 2",
+      name: "Beach Resort",
       completed: true,
-      stacks: ["react", "cms", "git"],
+      tags: ["react class component", "contentful cms", "git"],
+      demo: `https://jw-react-beach-resort.netlify.app`,
+      source: "https://github.com/jojowabbit/react-beach-resort-app",
       description:
         "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.",
       images: [
@@ -53,9 +57,11 @@ export const worksData = [
       id: "3",
     },
     fields: {
-      name: "project 3",
+      name: "Clipping Clone",
       completed: true,
-      stacks: ["react", "cms", "git"],
+      tags: ["tailwindcss", "vanilla js", "webpack"],
+      demo: `https://clippings-clone.netlify.app`,
+      source: "https://github.com/jojowabbit/clippings-clone",
       description:
         "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.",
       images: [
@@ -74,16 +80,18 @@ export const worksData = [
       id: "4",
     },
     fields: {
-      name: "project 4",
-      completed: true,
-      stacks: ["react", "cms", "git"],
+      name: "Yahoo finance api",
+      completed: false,
+      tags: ["react", "cms", "git"],
+      demo: `https://jw-react-githubusersdb.netlify.app/`,
+      source: "https://github.com/jojowabbit/react-githubusersdb",
       description:
         "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.",
       images: [
         {
           fields: {
             file: {
-              url: img1,
+              url: img4,
             },
           },
         },
@@ -95,9 +103,11 @@ export const worksData = [
       id: "5",
     },
     fields: {
-      name: "project 5",
-      completed: true,
-      stacks: ["react", "cms", "git"],
+      name: "covid 19 api",
+      completed: false,
+      tags: ["react", "cms", "git"],
+      demo: `https://jw-react-githubusersdb.netlify.app/`,
+      source: "https://github.com/jojowabbit/react-githubusersdb",
       description:
         "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.",
       images: [
@@ -116,9 +126,11 @@ export const worksData = [
       id: "6",
     },
     fields: {
-      name: "project 6",
+      name: "My Personal Portfolio",
       completed: false,
-      stacks: ["react", "cms", "git"],
+      tags: ["react hooks", "contentful", "context"],
+      demo: `https://rkst.netlify.app`,
+      source: "https://github.com/jojowabbit/react-personalportfolio",
       description:
         "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.",
       images: [

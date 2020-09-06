@@ -33,9 +33,16 @@ const PortfolioProvider = ({ children }) => {
     });
     return newItems;
   };
+  const getWork = (id) => {
+    let tempWorks = [...works];
+    const work = tempWorks.find((item) => item.id === id);
+    return work;
+  };
 
   return (
-    <PortfolioContext.Provider value={{ theme, isDark, handleTheme, works }}>
+    <PortfolioContext.Provider
+      value={{ theme, isDark, handleTheme, works, getWork }}
+    >
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         {children}
