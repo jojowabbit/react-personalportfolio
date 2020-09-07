@@ -9,9 +9,9 @@ const Work = ({ work }) => {
   let { id, name, tags, completed, images, demo, source } = work;
   tags = tags.map((item, index) => {
     return (
-      <li key={index}>
+      <p key={index}>
         <span>#{item}</span>
-      </li>
+      </p>
     );
   });
 
@@ -22,18 +22,7 @@ const Work = ({ work }) => {
         <Link to={`/works/${id}`} className="btn btn-primary work-link">
           details
         </Link>
-      </div>
-
-      <div className="work-container">
-        <div className="work-info">
-          <h6>{name}</h6>
-          <p>
-            status: <em>{completed ? "completed" : "ongoing"}</em>
-          </p>
-          <ul>{tags}</ul>
-        </div>
-
-        <div className="work-footer">
+        <div className="img-footer">
           <a href={demo} className="btn btn-primary">
             <SiNetlify />
           </a>
@@ -42,6 +31,14 @@ const Work = ({ work }) => {
           </a>
         </div>
       </div>
+
+      <div className="work-info">
+        <h6>{name}</h6>
+        <p>
+          status: <em>{completed ? "completed" : "ongoing"}</em>
+        </p>
+        {tags}
+      </div>
     </Wrapper>
   );
 };
@@ -49,14 +46,14 @@ const Work = ({ work }) => {
 export default Work;
 
 const Wrapper = styled.article`
-  margin: 1.5rem 2rem;
   border-radius: 0.25rem;
   box-shadow: ${shadows.s3};
   text-transform: capitalize;
   background-color: ${colors.gray.s2};
   color: ${colors.gray.s8};
   width: 100%;
-  max-width: 45rem;
+  max-width: 32rem;
+
   .img-container {
     height: 20rem;
     position: relative;
@@ -73,6 +70,19 @@ const Wrapper = styled.article`
     img {
       transition: all 0.45s;
     }
+    .img-footer {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding-left: 2rem;
+      display: flex;
+      justify-content: space-around;
+      a {
+        margin-right: 0.5rem;
+        display: block;
+        text-align: center;
+      }
+    }
     &:hover img {
       opacity: 0.7;
       scale: 1.2;
@@ -81,36 +91,21 @@ const Wrapper = styled.article`
       opacity: 1;
     }
   }
-  .work-container {
+
+  .work-info {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
-    padding: 2rem;
     line-height: 1.6;
+    padding: 2rem;
 
-    .work-info {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      ul {
-        display: flex;
-        li {
-          padding: 0 0.5rem;
-
-          span {
-            background-color: ${colors.gray.s3};
-            color: ${colors.primary.s9};
-            padding: 0.5rem;
-            border-radius: 0.25rem;
-          }
-        }
-      }
-    }
-    .work-footer {
-      padding-left: 2rem;
-      a {
-        margin-right: 0.5rem;
-        display: block;
-        text-align: center;
+    p {
+      opacity: 0.85;
+      span {
+        background-color: ${colors.gray.s3};
+        color: ${colors.primary.s9};
+        padding: 0.5rem;
+        border-radius: 0.25rem;
       }
     }
   }
