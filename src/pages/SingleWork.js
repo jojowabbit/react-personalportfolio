@@ -20,7 +20,7 @@ export default function SingleWork() {
       </Wrapper>
     );
   }
-  let { name, completed, tags, description, images } = work;
+  let { name, completed, tags, description, images, blocking, solution } = work;
   tags = tags.map((item, index) => {
     return (
       <li key={index}>
@@ -30,7 +30,7 @@ export default function SingleWork() {
   });
   return (
     <Wrapper>
-      <h3 className="section-title">{name} details</h3>
+      <h3 className="section-title">{name}</h3>
       <div className="img-container">
         <img src={images} alt={name} />
       </div>
@@ -38,15 +38,20 @@ export default function SingleWork() {
         completion : {completed ? "completed" : "ongoing"}
       </p>
       <ul className="tags">tags : {tags}</ul>
-      <p className="desc">{description}</p>
-      <h6>
-        to be addeD:
-        <ol>
-          <li>blocking</li>
-          <li>solution</li>
-          <li>visual fix</li>
-        </ol>
-      </h6>
+      <div className="details">
+        <div className="desc">
+          <h6>description</h6>
+          <p>{description}</p>
+        </div>
+        <div className="blocking">
+          <h6>blocking</h6>
+          <p>{blocking}</p>
+        </div>
+        <div className="solution">
+          <h6>solution</h6>
+          <p>{solution}</p>
+        </div>
+      </div>
     </Wrapper>
   );
 }

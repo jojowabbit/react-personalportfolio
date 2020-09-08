@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import { worksData } from "./data";
+import Client from "../contentful";
+
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles, defaultTheme, darkTheme } from "../GlobalStyles";
 
@@ -21,13 +22,20 @@ const PortfolioProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    setWorks(formatWorks(worksData));
+    // declare fx inside to avoid setting dependencies
+    const getWorksData = async () => {
+      let response = await Client.getEntries({
+        content_type: "rkworks",
+      });
+      setWorks(formatWorks(response.items));
+    };
+    getWorksData();
   }, []);
 
   const formatWorks = (items) => {
     let newItems = items.map((item) => {
       let id = item.sys.id;
-      let images = item.fields.images.map((image) => image.fields.file.url);
+      let images = item.fields.images.fields.file.url;
       let work = { ...item.fields, id, images };
       return work;
     });
